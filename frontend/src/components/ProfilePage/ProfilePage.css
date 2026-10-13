@@ -1,0 +1,416 @@
+/* ProfilePage.css — профиль в стиле Animal Crossing */
+.profile-page {
+  width: 100%;
+}
+
+/* ==================== Карточка пользователя ==================== */
+.profile-card {
+  background: linear-gradient(135deg, #d9dfc8 0%, #b8c9a0 100%);
+  color: var(--green-dark);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem 2rem;
+  margin-bottom: 1.8rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card::before {
+  content: '🍃';
+  position: absolute;
+  font-size: 6rem;
+  right: -1rem;
+  top: -1rem;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.profile-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 4px solid var(--bg-card);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-info {
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  color: var(--green-dark);
+}
+
+.profile-meta {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.profile-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(253, 250, 242, 0.6);
+  padding: 0.35rem 0.9rem;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+/* ==================== Сетка статистики ==================== */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.profile-stat-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.3rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  transition: 0.2s;
+  border: 2px solid transparent;
+}
+
+.profile-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--green-light);
+}
+
+.profile-stat-icon {
+  font-size: 1.9rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 3px rgba(74, 93, 58, 0.15));
+}
+
+.profile-stat-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  line-height: 1.1;
+}
+
+.profile-stat-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+  font-weight: 600;
+}
+
+/* ==================== Прогресс ==================== */
+.profile-progress-block {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.8rem;
+  margin-bottom: 1.8rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.profile-progress-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  margin: 0 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.profile-progress-bar {
+  position: relative;
+  width: 100%;
+  height: 14px;
+  background: var(--green-pale);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.profile-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-mid), var(--green-light));
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 12px rgba(122, 143, 92, 0.35);
+}
+
+.profile-progress-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.7rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+/* ==================== Таблица ==================== */
+.profile-table-block {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.6rem 1.3rem 1.6rem;
+  box-shadow: var(--shadow-soft);
+  overflow-x: auto;
+}
+
+.profile-table-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  margin: 0 0 1rem 0;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  min-width: 720px;
+}
+
+.profile-table th,
+.profile-table td {
+  border-bottom: 1px dashed var(--green-pale);
+  padding: 0.85rem 0.9rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.profile-table th {
+  background: var(--green-pale);
+  color: var(--green-dark);
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--green-light);
+}
+
+.profile-table th:first-child { border-top-left-radius: 12px; }
+.profile-table th:last-child { border-top-right-radius: 12px; }
+
+.profile-table tr:hover td {
+  background: #fbf7ec;
+}
+
+.profile-table td.center {
+  text-align: center;
+}
+
+/* ==================== Бейджи оценок ==================== */
+.grade-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.grade-badge.green {
+  background: #dff0d1;
+  color: #3d5a20;
+}
+
+.grade-badge.blue {
+  background: #d4e4f7;
+  color: #2c4d7a;
+}
+
+.grade-badge.yellow {
+  background: #fbf0c5;
+  color: #8a6a12;
+}
+
+.grade-badge.red {
+  background: #f8ddd7;
+  color: #8b3a32;
+}
+
+.grade-badge.gray {
+  background: #e8e6dd;
+  color: #7a7566;
+}
+
+/* ==================== Кнопки-действия ==================== */
+.profile-action-btn {
+  background: var(--green-mid);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+  white-space: nowrap;
+  box-shadow: 0 3px 8px rgba(122, 143, 92, 0.25);
+}
+
+.profile-action-btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(122, 143, 92, 0.35);
+}
+
+.profile-action-btn.secondary {
+  background: var(--bg-main);
+  color: var(--brown);
+  box-shadow: none;
+  border: 2px solid var(--brown-light);
+}
+
+.profile-action-btn.secondary:hover {
+  background: #fbeedc;
+  border-color: var(--brown);
+  color: var(--brown);
+}
+
+/* ==================== Средний балл ==================== */
+.profile-average {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.3rem;
+  background: linear-gradient(90deg, var(--green-pale), transparent);
+  border-radius: 16px;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+  border-left: 4px solid var(--green-mid);
+}
+
+.profile-average-label {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.profile-average-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--green-dark);
+}
+
+@media (max-width: 700px) {
+  .profile-card {
+    padding: 1.3rem;
+  }
+  .profile-name {
+    font-size: 1.3rem;
+  }
+  .profile-avatar {
+    width: 64px;
+    height: 64px;
+    font-size: 1.5rem;
+  }
+}
+
+/* Вкладки */
+.profile-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0 1rem 0;
+  border-bottom: 2px solid var(--green-pale);
+  flex-wrap: wrap;
+}
+
+.profile-tab {
+  background: transparent;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 12px 12px 0 0;
+  transition: 0.15s;
+  font-family: inherit;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.profile-tab:hover {
+  color: var(--green-dark);
+  background: var(--green-pale);
+}
+
+.profile-tab.active {
+  color: var(--green-dark);
+  border-bottom-color: var(--green-mid);
+  background: var(--green-pale);
+}
+
+/* Распределение оценок */
+.profile-distribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.profile-distribution-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 40px;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.profile-distribution-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.profile-distribution-track {
+  height: 16px;
+  background: #e8eede;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.profile-distribution-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.profile-distribution-count {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .profile-distribution-row {
+    grid-template-columns: 1fr;
+  }
+}

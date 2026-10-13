@@ -1,0 +1,424 @@
+/* TeacherPage.css — админ-панель преподавателя */
+.teacher-page {
+  width: 100%;
+}
+
+/* ==================== Фильтры ==================== */
+.teacher-filters {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.teacher-search {
+  flex-grow: 1;
+  min-width: 220px;
+  padding: 0.7rem 1.1rem;
+  border: 2px solid var(--green-pale);
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--text-main);
+  background: var(--bg-card);
+  transition: 0.15s ease;
+  outline: none;
+}
+
+.teacher-search:focus {
+  border-color: var(--green-mid);
+  box-shadow: 0 0 0 4px rgba(122, 143, 92, 0.15);
+}
+
+.teacher-filter-select {
+  padding: 0.7rem 1.1rem;
+  border: 2px solid var(--green-pale);
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--text-main);
+  background: var(--bg-card);
+  cursor: pointer;
+  outline: none;
+}
+
+/* ==================== Сводная статистика ==================== */
+.teacher-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.teacher-stat-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.3rem;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.teacher-stat-card:hover {
+  border-color: var(--green-light);
+  transform: translateY(-2px);
+}
+
+.teacher-stat-icon {
+  font-size: 1.9rem;
+  flex-shrink: 0;
+}
+
+.teacher-stat-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  line-height: 1.1;
+}
+
+.teacher-stat-label {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+/* ==================== Секция «Группы» ==================== */
+.teacher-section-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.teacher-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.teacher-group-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.teacher-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem 1.5rem;
+  background: linear-gradient(90deg, var(--green-pale), transparent);
+  cursor: pointer;
+  border-bottom: 1px solid var(--green-pale);
+  flex-wrap: wrap;
+  transition: 0.15s;
+}
+
+.teacher-group-header:hover {
+  background: linear-gradient(90deg, var(--green-light), transparent);
+}
+
+.teacher-group-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.teacher-group-meta {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  flex-wrap: wrap;
+}
+
+.teacher-group-meta strong {
+  color: var(--green-dark);
+}
+
+.teacher-group-toggle {
+  font-size: 0.85rem;
+  color: var(--green-mid);
+  font-weight: 700;
+}
+
+/* ==================== Таблица студентов ==================== */
+.teacher-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.teacher-table th,
+.teacher-table td {
+  border-bottom: 1px dashed var(--green-pale);
+  padding: 0.8rem 1rem;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.teacher-table th {
+  background: var(--green-pale);
+  color: var(--green-dark);
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.teacher-table tr:hover td {
+  background: #fbf7ec;
+}
+
+.teacher-table td.center {
+  text-align: center;
+}
+
+.teacher-student-name {
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.teacher-student-login {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==================== Мини-прогресс-бар ==================== */
+.teacher-progress-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 160px;
+}
+
+.teacher-progress-track {
+  flex-grow: 1;
+  height: 8px;
+  background: var(--green-pale);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.teacher-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-mid), var(--green-light));
+  border-radius: 6px;
+  transition: width 0.4s;
+}
+
+.teacher-progress-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  white-space: nowrap;
+}
+
+/* ==================== Кнопки ==================== */
+.teacher-action-btn {
+  background: var(--green-mid);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.45rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+  white-space: nowrap;
+  box-shadow: 0 3px 8px rgba(122, 143, 92, 0.25);
+}
+
+.teacher-action-btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+/* ==================== Карточка студента ==================== */
+.student-detail-header {
+  background: linear-gradient(135deg, #d9dfc8 0%, #b8c9a0 100%);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem 2rem;
+  margin-bottom: 1.8rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.student-detail-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-soft);
+}
+
+.student-detail-info {
+  flex-grow: 1;
+}
+
+.student-detail-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  margin: 0 0 0.4rem 0;
+}
+
+.student-detail-meta {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  flex-wrap: wrap;
+}
+
+.student-detail-meta span {
+  background: rgba(253, 250, 242, 0.6);
+  padding: 0.35rem 0.9rem;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+/* ==================== Заглушка «Нет данных» ==================== */
+.teacher-empty {
+  background: var(--bg-card);
+  border: 2px dashed var(--green-light);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.teacher-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 700px) {
+  .teacher-table {
+    font-size: 0.85rem;
+  }
+  .teacher-table th,
+  .teacher-table td {
+    padding: 0.6rem 0.5rem;
+  }
+  .teacher-group-header {
+    padding: 0.9rem 1rem;
+  }
+}
+
+/* Кнопки заявок */
+.teacher-request-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.teacher-action-btn.approve {
+  background: #6b8e4e;
+}
+
+.teacher-action-btn.approve:hover {
+  background: #4a6b30;
+}
+
+.teacher-action-btn.reject {
+  background: #b85450;
+}
+
+.teacher-action-btn.reject:hover {
+  background: #8b3a32;
+}
+
+/* ============ Вкладки ============ */
+.teacher-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--green-pale);
+  flex-wrap: wrap;
+}
+
+.teacher-tab {
+  background: transparent;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 12px 12px 0 0;
+  transition: 0.15s;
+  font-family: inherit;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.teacher-tab:hover {
+  color: var(--green-dark);
+  background: var(--green-pale);
+}
+
+.teacher-tab.active {
+  color: var(--green-dark);
+  border-bottom-color: var(--green-mid);
+  background: var(--green-pale);
+}
+
+/* ============ Суперадмин-панель ============ */
+.teacher-superadmin-bar {
+  background: linear-gradient(90deg, #f0d97a, #fdf6e6);
+  border: 2px solid #c9a227;
+  border-radius: 16px;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 16px rgba(201, 162, 39, 0.15);
+}
+
+.teacher-superadmin-label {
+  font-weight: 800;
+  color: #7a5b00;
+  font-size: 1rem;
+}
+
+.teacher-superadmin-actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}

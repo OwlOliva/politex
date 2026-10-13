@@ -1,0 +1,156 @@
+/* Quiz.css — общие стили теста для всех лекций */
+
+.quiz-section {
+  margin-top: 3rem;
+  background: #f0f5fe;
+  border-radius: 24px;
+  padding: 2rem 2rem 1.5rem 2rem;
+}
+
+.quiz-section h2 {
+  margin-top: 0;
+  border-bottom-color: #b8cee8;
+}
+
+.quiz-question {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.3rem 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 20, 40, 0.04);
+}
+
+.quiz-question p {
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.quiz-options label {
+  display: block;
+  background: #f8faff;
+  border: 1.5px solid #d0dded;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: 0.15s ease;
+  font-weight: 400;
+}
+
+.quiz-options label:hover {
+  background: #e9f1ff;
+  border-color: #2a6fdb;
+}
+
+.quiz-options input[type="radio"] {
+  margin-right: 0.7rem;
+  accent-color: #2a6fdb;
+  transform: scale(1.1);
+}
+
+.quiz-btn {
+  background: #2a6fdb;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 6px 14px rgba(42, 111, 219, 0.3);
+  margin-top: 0.5rem;
+  font-family: inherit;
+}
+
+.quiz-btn:hover {
+  background: #1a56b8;
+  box-shadow: 0 8px 18px rgba(42, 111, 219, 0.4);
+}
+
+.quiz-btn:active {
+  transform: scale(0.97);
+}
+
+.quiz-result {
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  background: #e3efff;
+  color: #0b2a4a;
+  display: none;
+}
+
+.quiz-result.show {
+  display: block;
+}
+
+.quiz-correct {
+  color: #1a7a3a;
+}
+
+.quiz-incorrect {
+  color: #b32b2b;
+}
+
+.quiz-feedback {
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin-top: 0.3rem;
+  color: #3d5a7a;
+}
+
+@media (max-width: 700px) {
+  .quiz-section {
+    padding: 1.2rem 1rem;
+  }
+}
+
+/* Мем-карточка с результатом */
+.quiz-meme {
+  margin-top: 1.8rem;
+  padding: 1.8rem 2rem;
+  border-radius: 22px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(74, 93, 58, 0.18);
+  animation: quizMemeAppear 0.4s ease;
+}
+
+@keyframes quizMemeAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.quiz-meme-emoji {
+  font-size: 3.4rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.15rem;
+}
+
+.quiz-meme-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 0 0.4rem 0;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-meme-text {
+  font-size: 0.98rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+  max-width: 520px;
+  margin-inline: auto;
+  line-height: 1.5;
+}

@@ -1,0 +1,120 @@
+/* Header.css — верхняя панель с информацией о пользователе */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid #e2eaf5;
+  box-shadow: 0 2px 8px rgba(0, 20, 40, 0.04);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.header-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0b2a4a;
+  margin: 0;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-user-info {
+  text-align: right;
+  line-height: 1.3;
+}
+
+.header-user-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0b2a4a;
+}
+
+.header-user-group {
+  font-size: 0.8rem;
+  color: #5d7089;
+}
+
+.header-logout {
+  background: #f0f5fe;
+  color: #2a6fdb;
+  border: 1.5px solid #d0dded;
+  border-radius: 40px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+}
+
+.header-logout:hover {
+  background: #e3efff;
+  border-color: #2a6fdb;
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    padding: 0.8rem 1rem;
+  }
+  .header-title {
+    font-size: 0.95rem;
+  }
+  .header-user-info {
+    display: none;
+  }
+}
+
+/* Навигация в шапке */
+.header-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+  margin-right: 1.5rem;
+}
+
+.header-nav-btn {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #5d7089;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+}
+
+.header-nav-btn:hover {
+  background: #f0f5fe;
+  color: #2a6fdb;
+}
+
+.header-nav-btn.active {
+  background: #e3efff;
+  color: #2a6fdb;
+}
+
+@media (max-width: 600px) {
+  .header-nav {
+    margin-right: 0.5rem;
+  }
+  .header-nav-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,271 @@
+/* CoursePage.css — стиль «Animal Crossing» */
+.course-page {
+  width: 100%;
+}
+
+/* ==================== Верхняя «природная» плашка ==================== */
+.course-hero {
+  background: linear-gradient(135deg, #d9dfc8 0%, #b8c9a0 100%);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  margin-bottom: 1.8rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.course-hero::before {
+  content: '🌲';
+  position: absolute;
+  font-size: 8rem;
+  right: 1rem;
+  top: -1rem;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.course-hero::after {
+  content: '🍃';
+  position: absolute;
+  font-size: 5rem;
+  right: 6rem;
+  bottom: -1rem;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.course-hero h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  color: var(--green-dark);
+  position: relative;
+  z-index: 1;
+}
+
+.course-hero p {
+  font-size: 0.98rem;
+  color: var(--text-main);
+  margin: 0 0 1.3rem 0;
+  max-width: 640px;
+  position: relative;
+  z-index: 1;
+}
+
+.course-progress-bar {
+  position: relative;
+  width: 100%;
+  height: 14px;
+  background: rgba(253, 250, 242, 0.6);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.course-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--ochre), var(--ochre-light));
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 12px rgba(201, 162, 39, 0.4);
+}
+
+.course-progress-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 0.6rem;
+  color: var(--green-dark);
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================== Сетка лекций ==================== */
+.course-lectures {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+.course-lecture-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.4rem 1.2rem 1.4rem;
+  box-shadow: var(--shadow-soft);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-lecture-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--green-light);
+}
+
+.course-lecture-card.completed {
+  background: linear-gradient(135deg, #fdfaf2 0%, #eef4e0 100%);
+  border-color: var(--green-mid);
+}
+
+/* Декоративная полоска сверху */
+.course-lecture-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--green-light);
+}
+
+.course-lecture-card.completed::before {
+  background: var(--green-mid);
+}
+
+.course-lecture-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.course-lecture-icon {
+  font-size: 1.7rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 3px rgba(74, 93, 58, 0.15));
+}
+
+.course-lecture-number {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.course-lecture-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.35;
+}
+
+.course-lecture-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 1rem 0;
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.course-lecture-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  border-top: 1px dashed var(--green-pale);
+  padding-top: 0.9rem;
+}
+
+.course-lecture-duration {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.course-lecture-status {
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  background: var(--bg-main);
+  color: var(--brown);
+  white-space: nowrap;
+}
+
+.course-lecture-status.done {
+  background: #e0efd3;
+  color: var(--green-dark);
+}
+
+.course-lecture-status.failed {
+  background: #f8ddd7;
+  color: var(--danger);
+}
+
+/* ==================== Действия ==================== */
+.course-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.course-btn-secondary {
+  background: var(--bg-card);
+  color: var(--brown);
+  border: 2px solid var(--brown-light);
+  border-radius: 40px;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.course-btn-secondary:hover {
+  background: #fbeedc;
+  border-color: var(--brown);
+  color: var(--brown);
+}
+
+@media (max-width: 600px) {
+  .course-hero {
+    padding: 1.5rem;
+  }
+  .course-hero h1 {
+    font-size: 1.4rem;
+  }
+  .course-lectures {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Заблокированная лекция */
+.course-lecture-card.locked {
+  background: #f0ece1;
+  cursor: not-allowed;
+  opacity: 0.75;
+  border-color: #e0dccf;
+}
+
+.course-lecture-card.locked::before {
+  background: #c9c2b0;
+}
+
+.course-lecture-card.locked:hover {
+  transform: none;
+  box-shadow: var(--shadow-soft);
+  border-color: #e0dccf;
+}
+
+.course-lecture-card.locked .course-lecture-title,
+.course-lecture-card.locked .course-lecture-desc,
+.course-lecture-card.locked .course-lecture-number,
+.course-lecture-card.locked .course-lecture-duration {
+  color: #a8a293;
+}
+
+.course-lecture-status.locked {
+  background: #e8e3d5;
+  color: #8b8470;
+}

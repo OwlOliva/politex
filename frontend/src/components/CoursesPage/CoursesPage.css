@@ -1,0 +1,246 @@
+/* CoursesPage.css */
+.courses-page {
+  width: 100%;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ==================== Карточка курса ==================== */
+.course-card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover:not(.disabled) {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--green-light);
+}
+
+.course-card.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---- Верхняя цветная часть ---- */
+.course-card-header {
+  position: relative;
+  padding: 1.8rem 1.6rem 1.4rem 1.6rem;
+  min-height: 110px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.course-card-header::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+.course-card-icon {
+  font-size: 3rem;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.course-card-status {
+  position: relative;
+  z-index: 1;
+}
+
+.course-card-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--green-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(4px);
+}
+
+.course-card-badge.done {
+  background: #1a7a3a;
+  color: #ffffff;
+}
+
+.course-card-badge.active {
+  background: #c9a227;
+  color: #ffffff;
+}
+
+.course-card-badge.empty {
+  background: rgba(255, 255, 255, 0.85);
+  color: #7a8566;
+}
+
+.course-card-badge.locked {
+  background: rgba(255, 255, 255, 0.85);
+  color: #8b3a32;
+}
+
+/* ---- Основное содержимое ---- */
+.course-card-body {
+  padding: 1.3rem 1.6rem 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 0.8rem;
+}
+
+.course-card-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.course-card-description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+  flex-grow: 1;
+  min-height: 60px;
+}
+
+.course-card-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.course-card-meta-item strong {
+  color: var(--green-dark);
+  font-weight: 800;
+}
+
+/* ---- Прогресс ---- */
+.course-card-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.course-card-progress-bar {
+  flex-grow: 1;
+  height: 10px;
+  background: var(--green-pale);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.course-card-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-mid), var(--ochre));
+  border-radius: 8px;
+  transition: width 0.5s ease;
+}
+
+.course-card-progress-text {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  min-width: 42px;
+  text-align: right;
+}
+
+/* ---- Кнопка ---- */
+.course-card-btn {
+  background: linear-gradient(135deg, var(--green-mid) 0%, var(--green-dark) 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-shadow: 0 6px 16px rgba(74, 93, 58, 0.25);
+  margin-top: 0.4rem;
+}
+
+.course-card-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(74, 93, 58, 0.35);
+}
+
+.course-card-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.course-card-btn:disabled {
+  background: linear-gradient(135deg, #d6dbc9 0%, #b8c2a4 100%);
+  color: #6b7358;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ==================== Подсказка ==================== */
+.courses-page-hint {
+  margin-top: 2rem;
+  padding: 1rem 1.4rem;
+  background: linear-gradient(90deg, #fbf0c5 0%, #fdf6e6 100%);
+  border-left: 4px solid var(--ochre);
+  border-radius: 0 14px 14px 0;
+  font-size: 0.9rem;
+  color: #7a5b00;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.courses-page-hint-icon {
+  font-size: 1.3rem;
+}
+
+.courses-page-hint-link {
+  background: none;
+  border: none;
+  color: #4a6b30;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+  .course-card-icon {
+    font-size: 2.4rem;
+  }
+}

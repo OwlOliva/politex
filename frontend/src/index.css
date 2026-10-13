@@ -1,0 +1,73 @@
+/* index.css — базовые стили и переменные */
+:root {
+  --bg-main: #f4ecdc;
+  --bg-card: #fdfaf2;
+  --bg-sidebar: #d9dfc8;
+  --bg-sidebar-hover: #e5ead4;
+  --bg-sidebar-active: #fdfaf2;
+
+  --green-dark: #4a5d3a;
+  --green-mid: #7a8f5c;
+  --green-light: #b8c9a0;
+  --green-pale: #e8eede;
+
+  --ochre: #c9a227;
+  --ochre-light: #f0d97a;
+
+  --brown: #8b6f47;
+  --brown-light: #b8977a;
+
+  --text-main: #3d4a2b;
+  --text-muted: #7a8566;
+  --text-soft: #a8b096;
+
+  --danger: #b85450;
+  --success: #6b8e4e;
+
+  --shadow-soft: 0 4px 14px rgba(74, 93, 58, 0.08);
+  --shadow-card: 0 6px 20px rgba(74, 93, 58, 0.10);
+  --shadow-hover: 0 10px 28px rgba(74, 93, 58, 0.15);
+
+  --radius-sm: 12px;
+  --radius: 22px;
+  --radius-lg: 28px;
+
+  --font-main: 'Nunito', 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(184, 201, 160, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(240, 217, 122, 0.15) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-main);
+  font-weight: 700;
+  color: var(--green-dark);
+  letter-spacing: -0.01em;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: var(--green-mid);
+}

@@ -1,0 +1,261 @@
+/* LectureContent.css */
+.lecture-content {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 2rem 2.4rem;
+  box-shadow: var(--shadow-soft);
+  margin: 1.5rem 0;
+  font-family: var(--font-main);
+  line-height: 1.65;
+}
+
+.lecture-content h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--green-dark);
+  margin: 1.8rem 0 0.8rem 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--green-pale);
+}
+
+.lecture-content h2:first-child {
+  margin-top: 0;
+}
+
+.lecture-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-mid);
+  margin: 1.5rem 0 0.6rem 0;
+}
+
+.lecture-content h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--green-mid);
+  margin: 1.2rem 0 0.5rem 0;
+}
+
+.lecture-content p {
+  color: var(--text-main);
+  margin-bottom: 0.8rem;
+}
+
+.lecture-content ul,
+.lecture-content ol {
+  padding-left: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.lecture-content li {
+  margin-bottom: 0.35rem;
+}
+
+.lecture-content-note {
+  padding: 0.9rem 1.3rem;
+  border-radius: 0 14px 14px 0;
+  margin: 1.2rem 0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.lecture-content-note.info {
+  background: #eaf2ff;
+  border-left: 5px solid var(--green-mid);
+  color: var(--green-dark);
+}
+
+.lecture-content-note.warning {
+  background: #fff9e6;
+  border-left: 5px solid var(--ochre);
+  color: #7a5b00;
+}
+
+.lecture-content-highlight {
+  background: linear-gradient(90deg, var(--green-pale), transparent);
+  border-left: 5px solid var(--green-mid);
+  padding: 0.9rem 1.3rem;
+  border-radius: 0 14px 14px 0;
+  margin: 1.2rem 0;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.lecture-content-image {
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.lecture-content-image img {
+  max-width: 100%;
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+.lecture-content-caption {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.lecture-content-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+}
+
+.lecture-content-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 0.8rem;
+}
+/* ==================== HTML-блок ==================== */
+.lecture-content-html {
+  margin: 1rem 0;
+  color: var(--text-main);
+  line-height: 1.65;
+}
+
+/* Стили для типичных тегов, которые преподаватель может использовать */
+
+.lecture-content-html h1,
+.lecture-content-html h2,
+.lecture-content-html h3,
+.lecture-content-html h4 {
+  color: var(--green-dark);
+  margin: 1.2rem 0 0.6rem 0;
+  font-weight: 800;
+}
+
+.lecture-content-html h1 { font-size: 1.5rem; }
+.lecture-content-html h2 { font-size: 1.3rem; }
+.lecture-content-html h3 { font-size: 1.15rem; }
+
+.lecture-content-html p {
+  margin-bottom: 0.7rem;
+}
+
+.lecture-content-html a {
+  color: var(--green-mid);
+  text-decoration: underline;
+}
+
+.lecture-content-html a:hover {
+  color: var(--green-dark);
+}
+
+.lecture-content-html ul,
+.lecture-content-html ol {
+  padding-left: 1.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.lecture-content-html li {
+  margin-bottom: 0.3rem;
+}
+
+/* Таблицы */
+.lecture-content-html table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.lecture-content-html th,
+.lecture-content-html td {
+  border: 1px solid #d0dded;
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+}
+
+.lecture-content-html th {
+  background: var(--green-pale);
+  color: var(--green-dark);
+  font-weight: 800;
+}
+
+.lecture-content-html tr:nth-child(even) td {
+  background: #f8faff;
+}
+
+/* Блоки кода */
+.lecture-content-html code {
+  background: #f0ece1;
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.92em;
+  color: #7a2e2e;
+}
+
+.lecture-content-html pre {
+  background: #1c2833;
+  color: #ecf0f1;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.lecture-content-html pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* Цитаты */
+.lecture-content-html blockquote {
+  border-left: 4px solid var(--green-mid);
+  background: var(--green-pale);
+  padding: 0.8rem 1.2rem;
+  margin: 1rem 0;
+  border-radius: 0 12px 12px 0;
+  color: var(--text-main);
+  font-style: italic;
+}
+
+/* Изображения */
+.lecture-content-html img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  margin: 0.5rem 0;
+}
+
+/* Iframe (для встраивания видео, презентаций) */
+.lecture-content-html iframe {
+  max-width: 100%;
+  border-radius: 12px;
+  border: none;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Горизонтальная линия */
+.lecture-content-html hr {
+  border: none;
+  border-top: 2px dashed var(--green-light);
+  margin: 1.5rem 0;
+}
+
+/* Кнопки внутри HTML */
+.lecture-content-html button,
+.lecture-content-html .btn {
+  background: var(--green-mid);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.lecture-content-html button:hover,
+.lecture-content-html .btn:hover {
+  background: var(--green-dark);
+}

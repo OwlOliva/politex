@@ -1,0 +1,219 @@
+/* Lecture5.css */
+
+.lecture5-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0, 20, 40, 0.08);
+  padding: 2.5rem 2.8rem;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  color: #1e2a3a;
+  line-height: 1.65;
+}
+
+.lecture5-container * {
+  box-sizing: border-box;
+}
+
+.lecture5-container h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #0b2a4a;
+  border-left: 8px solid #2a6fdb;
+  padding-left: 1.2rem;
+  margin: 0 0 1.8rem 0;
+}
+
+.lecture5-container h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0b2a4a;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #e2eaf5;
+}
+
+.lecture5-container h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1d4e89;
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.lecture5-container p,
+.lecture5-container li {
+  color: #233142;
+  margin-bottom: 0.75rem;
+}
+
+.lecture5-container ul,
+.lecture5-container ol {
+  padding-left: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.lecture5-container li {
+  margin-bottom: 0.35rem;
+}
+
+.lecture5-highlight {
+  background: #eaf2ff;
+  border-left: 5px solid #2a6fdb;
+  padding: 0.9rem 1.3rem;
+  border-radius: 0 14px 14px 0;
+  margin: 1.2rem 0;
+}
+
+.lecture5-note {
+  background: #fff9e6;
+  border-left: 5px solid #f0b400;
+  padding: 0.9rem 1.3rem;
+  border-radius: 0 14px 14px 0;
+  margin: 1.2rem 0;
+  font-size: 0.98rem;
+}
+
+.lecture5-diagram-block {
+  background: #f9fbfe;
+  border: 1px solid #d9e4f0;
+  border-radius: 22px;
+  padding: 1.5rem 1rem 1rem 1rem;
+  margin: 1.8rem 0;
+  text-align: center;
+}
+
+.lecture5-diagram-block svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.lecture5-diagram-caption {
+  font-size: 0.95rem;
+  color: #4e6b8a;
+  margin-top: 0.6rem;
+  font-style: italic;
+}
+
+/* ===== Тест ===== */
+.lecture5-test-section {
+  margin-top: 3rem;
+  background: #f0f5fe;
+  border-radius: 24px;
+  padding: 2rem 2rem 1.5rem 2rem;
+}
+
+.lecture5-test-section h2 {
+  margin-top: 0;
+  border-bottom-color: #b8cee8;
+}
+
+.lecture5-question {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.3rem 1.5rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 20, 40, 0.04);
+}
+
+.lecture5-question p {
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.lecture5-options label {
+  display: block;
+  background: #f8faff;
+  border: 1.5px solid #d0dded;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: 0.15s ease;
+  font-weight: 400;
+}
+
+.lecture5-options label:hover {
+  background: #e9f1ff;
+  border-color: #2a6fdb;
+}
+
+.lecture5-options input[type="radio"] {
+  margin-right: 0.7rem;
+  accent-color: #2a6fdb;
+  transform: scale(1.1);
+}
+
+.lecture5-btn {
+  background: #2a6fdb;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 6px 14px rgba(42, 111, 219, 0.3);
+  margin-top: 0.5rem;
+  font-family: inherit;
+}
+
+.lecture5-btn:hover {
+  background: #1a56b8;
+  box-shadow: 0 8px 18px rgba(42, 111, 219, 0.4);
+}
+
+.lecture5-btn:active {
+  transform: scale(0.97);
+}
+
+.lecture5-result {
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  background: #e3efff;
+  color: #0b2a4a;
+  display: none;
+}
+
+.lecture5-result.show {
+  display: block;
+}
+
+.lecture5-correct {
+  color: #1a7a3a;
+}
+
+.lecture5-incorrect {
+  color: #b32b2b;
+}
+
+.lecture5-feedback {
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin-top: 0.3rem;
+  color: #3d5a7a;
+}
+
+@media (max-width: 700px) {
+  .lecture5-container {
+    padding: 1.5rem 1rem;
+  }
+  .lecture5-container h1 {
+    font-size: 1.6rem;
+  }
+  .lecture5-container h2 {
+    font-size: 1.3rem;
+  }
+  .lecture5-test-section {
+    padding: 1.2rem 1rem;
+  }
+}
